@@ -17,7 +17,7 @@ export default function AsteroidForm() {
 
     <div>
 
-      <Header/>
+      <Header headerTitle="Get Asteroids"/>
 
 
       <div className="grid-container">
@@ -49,7 +49,7 @@ export default function AsteroidForm() {
              </div>
 
              <div class="form-group">
-                <label for="exampleInputEmail1">End Date</label>
+                <label for="exampleInputEmail1">End Date(must be within 7 days of start date)</label>
                 <input
                 type="date"
                 class="form-control"

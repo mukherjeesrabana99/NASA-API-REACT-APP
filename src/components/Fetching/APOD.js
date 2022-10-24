@@ -9,13 +9,13 @@ import axios from "axios";
 
 export default function APOD(){
 
-  const [picture, setPicture]= useState("");
+  const [item, setItem]= useState("");
 
   useEffect(()=>{
     const fetchAPOD = async () => {
       const response = await fetch("https://api.nasa.gov/planetary/apod?api_key=dG52PPmiqxcQN4dcplLL0JjYkwmdg5iK5TZGwjXx");
       const data = await response.json();
-      setPicture(data);
+      setItem(data);
       console.log(data);
     }
     fetchAPOD()
@@ -23,7 +23,7 @@ export default function APOD(){
 );
     return (
         <div>
-          <Header/>
+          <Header width="1000px" headerTitle="Picture of the day"/>
           <div className="grid-container">
 
 
@@ -33,24 +33,25 @@ export default function APOD(){
 
 
 
-            <div className="mt-5 ml-10 ">
+            <main>
+			         <div className="feedContainer row">
+                <div className="mt-5 ml-10 ">
 
-              <div style={{ height: 600, width: '80%' }}>
 
-              <div className="card" style={{width: "18rem"}}>
-                <div className="card-header text-white bg-info pt-2 pb-2 "><b>User List</b></div>
-                <img className="card-img-top" src="{picture.hdurl}" alt="Card image cap" />
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                <div className="card" style={{cursor:"pointer",width: "30rem", height:"20"}}>
+                  <img  className="card-img-top" src={item.hdurl} />
+                  <div className="card-body">
+                    <b style={{display:"block"}} className="card-title">{item.title}</b>
+                    <p style={{display:"block"}} className="card-title">{item.explanation}</p>
+
+                  </div>
                 </div>
+
+               </div>
               </div>
+            </main>
 
-
-
-
-              </div>
-
-            </div>
 
 
 

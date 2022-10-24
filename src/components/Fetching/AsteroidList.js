@@ -35,7 +35,7 @@ export default function AsteroidList(){
   }
     return (
         <div>
-          <Header/>
+          <Header headerTitle="List Of Asteroids"/>
           <div className="grid-container">
 
 
