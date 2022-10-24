@@ -12,35 +12,23 @@ class LeftSideBar extends Component {
           <nav id="sidebar" style={{ height: '1500px' }}>
             <ul class="list-unstyled components">
               <li>
-                <NavLink to="/" activeClassName="active" exaact>
-
-                  <label className="ml-4" > APOD</label>
+                <NavLink to="/" activeClassName="active" exact>
+                  <span><i className="fa fa-star"></i></span>
+                  <label className="ml-2" style={{ fontSize: '12px' }} > APOD</label>
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/asteroidList" activeClassName="active">
-                  <span><i className="fa fa-bar-chart" style={{ fontSize: '20px' }}></i></span>
-                  <label className="ml-4" >Asteroid List</label>
+                <NavLink to="/asteroidForm" activeClassName="active">
+                  <span><i class="fa fa-wpforms" aria-hidden="true"></i></span>
+                  <label className="ml-2" style={{ fontSize: '12px' }} >Fetch Asteroid</label>
 
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/marsPhotos" activeClassName="active">
-                  <span><i className="fa fa-bar-chart" style={{ fontSize: '20px' }}></i></span>
-                  <label className="ml-4" > Mars Photos</label>
+                  <span><i class="fa fa-picture-o" aria-hidden="true"></i></span>
+                  <label className="ml-2" style={{ fontSize: '12px' }} > Mars Photos</label>
 
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/asteroidForm" activeClassName="active">
-                  <span><i className="fa fa-tasks" style={{ fontSize: '20px' }}></i> </span>
-                  <label className="ml-4" > Fetch Asteroid</label>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/myprofile" activeClassName="active">
-                  <span><i style={{ 'font-size': '25px' }} className="fa fa-user"></i></span>
-                  <label className="ml-4" > Option 4</label>
                 </NavLink>
               </li>
             </ul>

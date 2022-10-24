@@ -1,7 +1,7 @@
 .left-side-bar {
   color: #999;
   margin-right: 20px;
-  background-color: red;
+
 
 }
 ß
@@ -18,7 +18,7 @@
   line-height: 21px;
   color: #999;
   width:130px;
- 
+
 }
 
 /* .dashboardSelected a {
@@ -48,4 +48,35 @@ a.active {
   cursor: pointer;
 }
 
+#sidebar {
+    width:auto;
+    background: #fff;
+    color: #ccc;
+    transition: all 0.3s;
+    box-shadow:0 0 18px -2px black;
+    border-radius:10px;
+}
 
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #1092EC;
+    border-radius: 4px;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul li a {
+    padding: 30px;
+    font-size: 1.4em;
+    display: block;
+    text-decoration: none;
+
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+    cursor:pointer;
+}
