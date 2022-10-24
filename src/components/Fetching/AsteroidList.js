@@ -31,7 +31,7 @@ export default function AsteroidList(){
 
   const navigateToAsteroid=(id, name)=>{
     console.log("clicked");
-    navigate(`/asteroids/${id}/${name}`)
+    navigate(`/asteroids/${id}`)
   }
     return (
         <div>
@@ -68,7 +68,7 @@ export default function AsteroidList(){
 
                        <th scope="row" key={ast.id}>{ast.name}</th>
                        <td>{ast.close_approach_data[0].close_approach_date_full}</td>
-                       <button className="btn btn-info mt-2 mb-2" onClick={() => navigateToAsteroid(ast.id, ast.name)}>View asteroid</button>
+                       <button className="btn btn-info mt-2 mb-2" onClick={() => navigateToAsteroid(ast.id)}>View asteroid</button>
 
                      </tr>
 

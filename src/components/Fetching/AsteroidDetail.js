@@ -2,20 +2,21 @@ import React, { Component } from "react";
 import Header from "./Header/Header";
 import "./AsteroidList.css";
 import { useState, useEffect } from "react";
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import { Link, Route } from "react-router-dom";
 import LeftSideBar from "./LeftSideBar/LeftSideBar";
 import axios from "axios";
 
 export default function AsteroidDetail(){
-
-  const [picture, setPicture]= useState("");
+  const params= useParams();
+  const [item, setItem]= useState("");
 
   useEffect(()=>{
     const fetchAPOD = async () => {
-      const response = await fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=dG52PPmiqxcQN4dcplLL0JjYkwmdg5iK5TZGwjXx");
+      const response = await fetch(`https://api.nasa.gov/neo/rest/v1/neo/${params.id}?api_key=dG52PPmiqxcQN4dcplLL0JjYkwmdg5iK5TZGwjXx`);
       const data = await response.json();
-      setPicture(data);
+      setItem(data);
       console.log(data);
     }
     fetchAPOD()
@@ -32,24 +33,27 @@ export default function AsteroidDetail(){
             </div>
 
 
+            <main>
+			         <div className="feedContainer row">
+                <div className="mt-5 ml-10 ">
 
-            <div className="mt-5 ml-10 ">
 
-              <div style={{ height: 600, width: '80%' }}>
 
-              <div className="card" style={{width: "18rem"}}>
-                <div className="card-header text-white bg-info pt-2 pb-2 "><b>User List</b></div>
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
+                  <div className="card mr-5" style={{width: "50rem", height:"18rem"}}>
+                    <div className="card-header text-white bg-info pt-2 pb-2 "><b>{item.name}</b></div>
+                    <div class="card-body">
+
+            	       <b style={{display:"block"}} className="card-title"><span style={{color:"#7378c5"}}>Designation: </span>{item.designation}</b>
+
+            	        <b style={{display:"block"}} className="card-title"><span style={{color:"#7378c5"}}>Magnitude: </span>{item.absolute_magnitude_h}</b>
+            	         <b style={{display:"block"}} className="card-title"><span style={{color:"#7378c5"}}>Dangerous?</span>{item.dangerous?"YES":"NO"}</b>
+
+            	     </div>
+                 </div>
+
+               </div>
               </div>
-
-
-
-
-              </div>
-
-            </div>
+            </main>
 
 
 

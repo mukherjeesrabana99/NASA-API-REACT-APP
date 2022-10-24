@@ -16,3 +16,25 @@
 .right-side{
 
 }
+
+.apodContainer{
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.feedContainer{
+    background-position: center;
+    display: flex;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}

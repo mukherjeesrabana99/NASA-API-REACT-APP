@@ -9,14 +9,15 @@ import axios from "axios";
 
 export default function MarsPhotos(){
 
-  const [picture, setPicture]= useState("");
+  const [items, setItems]= useState("");
 
   useEffect(()=>{
     const fetchAPOD = async () => {
       const response = await fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=dG52PPmiqxcQN4dcplLL0JjYkwmdg5iK5TZGwjXx");
       const data = await response.json();
-      setPicture(data);
-      console.log(data);
+      const arr= [data.photos]
+      setItems(arr);
+      console.log(arr);
     }
     fetchAPOD()
   }, []
@@ -32,24 +33,25 @@ export default function MarsPhotos(){
             </div>
 
 
-
-            <div className="mt-5 ml-10 ">
-
-              <div style={{ height: 600, width: '80%' }}>
-
-              <div className="card" style={{width: "18rem"}}>
-                <div className="card-header text-white bg-info pt-2 pb-2 "><b>User List</b></div>
-                <div className="card-body">
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
+            <main>
+			         <div className="feedContainer row">
 
 
+                {items.map((item, i)=>{
+                  return(
+                    <div className= "col-lg-3 col-md-6 col-sm-6">
+                      <div className="card" style={{cursor:"pointer", width:"17rem", height:"auto"}}>
+                        <img  className="card-img-top" src="{item.img_src}" />
+                      </div>
+                    </div>
+                  )
+                })}
 
 
-              </div>
 
-            </div>
+
+             </div>
+            </main>
 
 
 
